@@ -115,12 +115,18 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="FocusInput:" destination="r1U-65-sfd" eventType="editingDidBegin" id="nPI-Qm-i3h"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="hzA-qr-3Ar">
                                                 <rect key="frame" x="20" y="64" width="281" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="FocusInput:" destination="r1U-65-sfd" eventType="editingDidEnd" id="lFI-Mi-uO1"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,9 +154,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
+                                <gestureRecognizers/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" id="IA9-aF-wIt"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -158,6 +166,7 @@
                     <connections>
                         <outlet property="buttonParentView" destination="dAc-St-TQa" id="oEL-4j-YSj"/>
                         <outlet property="fieldParentView" destination="DSR-Vz-Aw8" id="4Ck-ji-BSA"/>
+                        <outlet property="scrollView" destination="RDg-0P-fIj" id="FHh-Tj-OR8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6S-hq-RaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var fieldParentView: UIView!
     
     @IBOutlet weak var buttonParentView: UIView!
@@ -18,11 +20,26 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func keyboardWillShow(notification: NSNotification!) {
+        scrollView.contentOffset.y = 90
+        buttonParentView.transform = CGAffineTransformMakeTranslation(0, -130)
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        buttonParentView.transform = CGAffineTransformMakeTranslation(0, 0)
+    }
+    @IBAction func FocusInput(sender: AnyObject) {
+
     }
     
     @IBAction func tapBackButton(sender: AnyObject) {
@@ -32,7 +49,7 @@ class SignInViewController: UIViewController {
     @IBAction func tapSignInButton(sender: AnyObject) {
         
     }
-    
+
     /*
     // MARK: - Navigation
 
