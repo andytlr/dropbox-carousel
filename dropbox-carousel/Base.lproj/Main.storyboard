@@ -179,11 +179,27 @@
                         <outlet property="hideTextBox" destination="9Sx-Du-WgC" id="L7k-YB-gM9"/>
                         <outlet property="passwordInput" destination="hzA-qr-3Ar" id="SNA-ox-k6Y"/>
                         <outlet property="scrollView" destination="RDg-0P-fIj" id="FHh-Tj-OR8"/>
+                        <segue destination="As1-mR-VDd" kind="push" identifier="SignIn" id="xLI-vz-3M6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6S-hq-RaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="loM-ai-JWS">
+            <objects>
+                <viewController id="As1-mR-VDd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hV8-Gb-LTF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xuu-Ri-9dZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsq-3L-Bll" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="46e-7i-V2u">

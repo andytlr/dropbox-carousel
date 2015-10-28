@@ -87,6 +87,17 @@ class SignInViewController: UIViewController {
                     self.presentViewController(alertController, animated: true) { }
                 }
             }
+            
+            if emailInput.text == "hi@andytaylor.me" && passwordInput.text == "derp" {
+                
+                activityIndicator.startAnimating()
+                hideTextBox.alpha = 1
+                
+                delay(2) {
+                    self.performSegueWithIdentifier("SignIn", sender: nil)
+                }
+                
+            }
         }
     }
 
