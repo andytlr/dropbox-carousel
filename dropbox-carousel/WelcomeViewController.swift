@@ -26,7 +26,6 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var imageSix: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,9 +46,10 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
         
-        let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: -20.0, r1Max: 568.0, r2Min: 2.0, r2Max: 1)
+//        print(scrollView.contentOffset.y)
+        
+        let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: -20.0, r1Max: 568.0, r2Min: 2.0, r2Max: 1.0)
         
         imageOne.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
@@ -186,20 +186,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -10,     // Rotation
                 r2Max: 0)
             ) * M_PI / 180))
-
-
-        
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
