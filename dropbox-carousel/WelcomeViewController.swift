@@ -56,25 +56,52 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         imageFive.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
         imageSix.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
         
-        imageOne.transform = CGAffineTransformMakeTranslation(0,
-            // Y Move
+        imageOne.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -300,    // Top
-                r2Max: 0)       // Bottom
-        )
-        
-        imageTwo.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
-        
-        imageTwo.transform = CGAffineTransformMakeTranslation(0,
-            // Y Move
+                r2Min: -85,     // X Move
+                r2Max: 0),
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -300,    // Top
-                r2Max: 0)       // Bottom
+                r2Min: -280,    // Y Move
+                r2Max: 0)
         )
+        
+        imageOne.transform = CGAffineTransformRotate(imageOne.transform, CGFloat(Double(
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -10,     // Rotation
+                r2Max: 0)
+            ) * M_PI / 180))
+        
+        
+        imageTwo.transform = CGAffineTransformMakeTranslation(
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: 40,      // X Move
+                r2Max: 0),
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -260,    // Y Move
+                r2Max: 0)
+        )
+        
+        imageTwo.transform = CGAffineTransformScale(imageTwo.transform, scaleAmount, scaleAmount)
+        
+        imageTwo.transform = CGAffineTransformRotate(imageTwo.transform, CGFloat(Double(
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -10,     // Rotation
+                r2Max: 0)
+                ) * M_PI / 180))
+
+        
         
     }
 
