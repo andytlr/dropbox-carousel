@@ -16,6 +16,10 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var buttonParentView: UIView!
     
+    @IBOutlet weak var emailInput: UITextField!
+    
+    @IBOutlet weak var passwordInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,7 +51,18 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func tapSignInButton(sender: AnyObject) {
-        
+        if emailInput.text == "" || passwordInput.text == "" {
+            print("dis emptys")
+            
+            let alertController = UIAlertController(title: "Can't Log In", message: "Both email and password are required.", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+
+            alertController.addAction(cancelAction)
+            
+            presentViewController(alertController, animated: true) { }
+
+        }
     }
 
     /*

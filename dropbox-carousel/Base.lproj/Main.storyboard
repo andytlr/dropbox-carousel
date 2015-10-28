@@ -146,7 +146,7 @@
                                                     <action selector="tapSignInButton:" destination="r1U-65-sfd" eventType="touchUpInside" id="Azh-RJ-PTe"/>
                                                 </connections>
                                             </button>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="cXc-Qg-4hs">
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="cXc-Qg-4hs">
                                                 <rect key="frame" x="150" y="27" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </activityIndicatorView>
@@ -165,7 +165,9 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="buttonParentView" destination="dAc-St-TQa" id="oEL-4j-YSj"/>
+                        <outlet property="emailInput" destination="TKm-kd-AIY" id="z6C-yy-REY"/>
                         <outlet property="fieldParentView" destination="DSR-Vz-Aw8" id="4Ck-ji-BSA"/>
+                        <outlet property="passwordInput" destination="hzA-qr-3Ar" id="SNA-ox-k6Y"/>
                         <outlet property="scrollView" destination="RDg-0P-fIj" id="FHh-Tj-OR8"/>
                     </connections>
                 </viewController>
