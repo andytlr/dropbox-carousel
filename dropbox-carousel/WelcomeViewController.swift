@@ -14,6 +14,19 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var imageOne: UIImageView!
+    
+    @IBOutlet weak var imageTwo: UIImageView!
+    
+    @IBOutlet weak var imageThree: UIImageView!
+    
+    @IBOutlet weak var imageFour: UIImageView!
+    
+    @IBOutlet weak var imageFive: UIImageView!
+    
+    @IBOutlet weak var imageSix: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +48,34 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         print(scrollView.contentOffset.y)
+        
+        let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: -20.0, r1Max: 568.0, r2Min: 2.0, r2Max: 1)
+        
+        imageThree.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
+        imageFour.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
+        imageFive.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
+        imageSix.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
+        
+        imageOne.transform = CGAffineTransformMakeTranslation(0,
+            // Y Move
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -300,    // Top
+                r2Max: 0)       // Bottom
+        )
+        
+        imageTwo.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount)
+        
+        imageTwo.transform = CGAffineTransformMakeTranslation(0,
+            // Y Move
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -300,    // Top
+                r2Max: 0)       // Bottom
+        )
+        
     }
 
     /*

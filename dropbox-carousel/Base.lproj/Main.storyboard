@@ -37,7 +37,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro_tile5" id="Se8-rb-qHD">
-                                        <rect key="frame" x="122" y="901" width="76" height="75"/>
+                                        <rect key="frame" x="123" y="901" width="76" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro_tile6" id="cyf-qE-5Qb">
@@ -60,6 +60,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1136"/>
                     <connections>
+                        <outlet property="imageFive" destination="Se8-rb-qHD" id="Bug-r2-kOs"/>
+                        <outlet property="imageFour" destination="J1Y-Bh-RZe" id="yz9-Qd-Se9"/>
+                        <outlet property="imageOne" destination="DV4-pZ-gqj" id="g9T-Ec-3Hm"/>
+                        <outlet property="imageSix" destination="cyf-qE-5Qb" id="zrM-Kc-MPV"/>
+                        <outlet property="imageThree" destination="7wO-Sm-aTc" id="ItR-Ez-VIp"/>
+                        <outlet property="imageTwo" destination="ZBD-sO-Oyw" id="KVn-K6-eRR"/>
                         <outlet property="imageView" destination="F2c-71-wMj" id="ocN-yn-Gew"/>
                         <outlet property="scrollView" destination="YFz-Z9-7ga" id="toA-Fs-dYU"/>
                     </connections>
