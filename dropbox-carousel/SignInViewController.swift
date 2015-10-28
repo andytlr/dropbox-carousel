@@ -67,24 +67,25 @@ class SignInViewController: UIViewController {
             alertController.addAction(cancelAction)
             
             presentViewController(alertController, animated: true) { }
-        }
-        
-        if emailInput.text != "hi@andytaylor.me" || passwordInput.text != "derp" {
             
-            activityIndicator.startAnimating()
-            hideTextBox.alpha = 1
-            
-            delay(2) {
-                self.activityIndicator.stopAnimating()
-                self.hideTextBox.alpha = 0
+        } else {
+            if emailInput.text != "hi@andytaylor.me" || passwordInput.text != "derp" {
                 
-                let alertController = UIAlertController(title: "Can't Log In", message: "Ur email or password is prolly wrong.", preferredStyle: .Alert)
+                activityIndicator.startAnimating()
+                hideTextBox.alpha = 1
                 
-                let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
-                
-                alertController.addAction(cancelAction)
-                
-                self.presentViewController(alertController, animated: true) { }
+                delay(2) {
+                    self.activityIndicator.stopAnimating()
+                    self.hideTextBox.alpha = 0
+                    
+                    let alertController = UIAlertController(title: "Can't Log In", message: "Ur email or password is prolly wrong.", preferredStyle: .Alert)
+                    
+                    let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+                    
+                    alertController.addAction(cancelAction)
+                    
+                    self.presentViewController(alertController, animated: true) { }
+                }
             }
         }
     }
