@@ -10,6 +10,10 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    @IBOutlet weak var fieldParentView: UIView!
+    
+    @IBOutlet weak var buttonParentView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +29,10 @@ class SignInViewController: UIViewController {
         navigationController!.popViewControllerAnimated(true)
     }
 
+    @IBAction func tapSignInButton(sender: AnyObject) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
