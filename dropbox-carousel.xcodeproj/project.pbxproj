@@ -13,6 +13,7 @@
 		C2C03AE41BE050F2007B27DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C03AE31BE050F2007B27DC /* Assets.xcassets */; };
 		C2C03AE71BE050F2007B27DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C03AE51BE050F2007B27DC /* LaunchScreen.storyboard */; };
 		C2C03AEF1BE0538B007B27DC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C03AEE1BE0538B007B27DC /* Common.swift */; settings = {ASSET_TAGS = (); }; };
+		C2C03AF11BE05456007B27DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C03AF01BE05456007B27DC /* WelcomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C2C03AE61BE050F2007B27DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2C03AE81BE050F2007B27DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C03AEE1BE0538B007B27DC /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C2C03AF01BE05456007B27DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				C2C03ADC1BE050F2007B27DC /* AppDelegate.swift */,
 				C2C03ADE1BE050F2007B27DC /* ViewController.swift */,
 				C2C03AEE1BE0538B007B27DC /* Common.swift */,
+				C2C03AF01BE05456007B27DC /* WelcomeViewController.swift */,
 				C2C03AE01BE050F2007B27DC /* Main.storyboard */,
 				C2C03AE31BE050F2007B27DC /* Assets.xcassets */,
 				C2C03AE51BE050F2007B27DC /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C03ADF1BE050F2007B27DC /* ViewController.swift in Sources */,
+				C2C03AF11BE05456007B27DC /* WelcomeViewController.swift in Sources */,
 				C2C03AEF1BE0538B007B27DC /* Common.swift in Sources */,
 				C2C03ADD1BE050F2007B27DC /* AppDelegate.swift in Sources */,
 			);
