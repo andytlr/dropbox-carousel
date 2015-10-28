@@ -99,7 +99,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: 0,      // X Move
+                r2Min: 10,      // X Move
                 r2Max: 0),
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
@@ -145,12 +145,12 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -130,      // X Move
+                r2Min: -140,      // X Move
                 r2Max: 0),
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -530,    // Y Move
+                r2Min: -540,    // Y Move
                 r2Max: 0)
         )
         
@@ -168,7 +168,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -130,      // X Move
+                r2Min: -120,      // X Move
                 r2Max: 0),
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
