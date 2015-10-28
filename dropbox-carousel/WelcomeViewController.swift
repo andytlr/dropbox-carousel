@@ -141,7 +141,28 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Max: 0)
             ) * M_PI / 180))
         
+        imageFive.transform = CGAffineTransformMakeTranslation(
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -130,      // X Move
+                r2Max: 0),
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: -530,    // Y Move
+                r2Max: 0)
+        )
         
+        imageFive.transform = CGAffineTransformScale(imageFive.transform, scaleAmount, scaleAmount)
+        
+        imageFive.transform = CGAffineTransformRotate(imageFive.transform, CGFloat(Double(
+            convertValue(scrollView.contentOffset.y,
+                r1Min: -20.0,
+                r1Max: 568.0,
+                r2Min: 10,     // Rotation
+                r2Max: 0)
+            ) * M_PI / 180))
         
         imageSix.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
