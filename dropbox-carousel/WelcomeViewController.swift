@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -20,6 +20,8 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         scrollView.contentSize = imageView.frame.size
+        
+        scrollView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +31,10 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func tapSignInButton(sender: AnyObject) {
         
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
     }
 
     /*
