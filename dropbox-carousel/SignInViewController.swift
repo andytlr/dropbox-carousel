@@ -20,6 +20,10 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var passwordInput: UITextField!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var hideTextBox: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +31,8 @@ class SignInViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
+        hideTextBox.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +46,7 @@ class SignInViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification!) {
+        scrollView.contentOffset.y = 0
         buttonParentView.transform = CGAffineTransformMakeTranslation(0, 0)
     }
     @IBAction func FocusInput(sender: AnyObject) {
@@ -52,7 +59,6 @@ class SignInViewController: UIViewController {
 
     @IBAction func tapSignInButton(sender: AnyObject) {
         if emailInput.text == "" || passwordInput.text == "" {
-            print("dis emptys")
             
             let alertController = UIAlertController(title: "Can't Log In", message: "Both email and password are required.", preferredStyle: .Alert)
             
@@ -61,7 +67,25 @@ class SignInViewController: UIViewController {
             alertController.addAction(cancelAction)
             
             presentViewController(alertController, animated: true) { }
-
+        }
+        
+        if emailInput.text != "hi@andytaylor.me" || passwordInput.text != "derp" {
+            
+            activityIndicator.startAnimating()
+            hideTextBox.alpha = 1
+            
+            delay(2) {
+                self.activityIndicator.stopAnimating()
+                self.hideTextBox.alpha = 0
+                
+                let alertController = UIAlertController(title: "Can't Log In", message: "Ur email or password is prolly wrong.", preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+                
+                alertController.addAction(cancelAction)
+                
+                self.presentViewController(alertController, animated: true) { }
+            }
         }
     }
 

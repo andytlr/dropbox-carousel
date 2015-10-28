@@ -142,10 +142,18 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aq4-G4-CVQ">
                                                 <rect key="frame" x="0.0" y="8" width="320" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="tapSignInButton:" destination="r1U-65-sfd" eventType="touchUpInside" id="Azh-RJ-PTe"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" id="9Sx-Du-WgC">
+                                                <rect key="frame" x="58" y="19" width="205" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.23130732774734497" green="0.7260480523109436" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" id="cXc-Qg-4hs">
                                                 <rect key="frame" x="150" y="27" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -164,9 +172,11 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="cXc-Qg-4hs" id="0sx-ho-jCM"/>
                         <outlet property="buttonParentView" destination="dAc-St-TQa" id="oEL-4j-YSj"/>
                         <outlet property="emailInput" destination="TKm-kd-AIY" id="z6C-yy-REY"/>
                         <outlet property="fieldParentView" destination="DSR-Vz-Aw8" id="4Ck-ji-BSA"/>
+                        <outlet property="hideTextBox" destination="9Sx-Du-WgC" id="L7k-YB-gM9"/>
                         <outlet property="passwordInput" destination="hzA-qr-3Ar" id="SNA-ox-k6Y"/>
                         <outlet property="scrollView" destination="RDg-0P-fIj" id="FHh-Tj-OR8"/>
                     </connections>
