@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -33,6 +33,9 @@ class SignInViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         hideTextBox.alpha = 0
+        scrollView.bounces = false
+        
+        scrollView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,17 +45,23 @@ class SignInViewController: UIViewController {
     
     func keyboardWillShow(notification: NSNotification!) {
         scrollView.contentOffset.y = 90
-        buttonParentView.transform = CGAffineTransformMakeTranslation(0, -130)
+        buttonParentView.transform = CGAffineTransformMakeTranslation(0, -100)
+        scrollView.bounces = true
         scrollView.scrollEnabled = true
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         scrollView.contentOffset.y = 0
         buttonParentView.transform = CGAffineTransformMakeTranslation(0, 0)
-        scrollView.scrollEnabled = false
+        scrollView.bounces = false
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        print(self.scrollView.contentOffset)
+    }
+    
     @IBAction func FocusInput(sender: AnyObject) {
-
+        
     }
     
     @IBAction func tapBackButton(sender: AnyObject) {
