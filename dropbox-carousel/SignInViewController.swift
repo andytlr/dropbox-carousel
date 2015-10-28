@@ -43,11 +43,13 @@ class SignInViewController: UIViewController {
     func keyboardWillShow(notification: NSNotification!) {
         scrollView.contentOffset.y = 90
         buttonParentView.transform = CGAffineTransformMakeTranslation(0, -130)
+        scrollView.scrollEnabled = true
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         scrollView.contentOffset.y = 0
         buttonParentView.transform = CGAffineTransformMakeTranslation(0, 0)
+        scrollView.scrollEnabled = false
     }
     @IBAction func FocusInput(sender: AnyObject) {
 

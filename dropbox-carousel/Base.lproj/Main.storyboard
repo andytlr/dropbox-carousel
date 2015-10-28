@@ -94,7 +94,7 @@
                                     <action selector="tapBackButton:" destination="r1U-65-sfd" eventType="touchUpInside" id="dCL-Z0-3FG"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="RDg-0P-fIj">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="RDg-0P-fIj">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -114,7 +114,7 @@
                                                 <rect key="frame" x="20" y="19" width="281" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <connections>
                                                     <action selector="FocusInput:" destination="r1U-65-sfd" eventType="editingDidBegin" id="nPI-Qm-i3h"/>
                                                 </connections>
@@ -123,7 +123,7 @@
                                                 <rect key="frame" x="20" y="64" width="281" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
                                                     <action selector="FocusInput:" destination="r1U-65-sfd" eventType="editingDidEnd" id="lFI-Mi-uO1"/>
                                                 </connections>
