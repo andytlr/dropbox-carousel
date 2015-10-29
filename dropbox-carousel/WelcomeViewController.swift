@@ -41,13 +41,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func tapSignInButton(sender: AnyObject) {
-        
-    }
-    
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-//        print(scrollView.contentOffset.y)
         
         let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: -20.0, r1Max: 568.0, r2Min: 2.0, r2Max: 1.0)
         
