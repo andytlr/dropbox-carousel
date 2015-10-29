@@ -223,16 +223,16 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="backup_button" id="Xza-KZ-PXc">
-                                        <rect key="frame" x="960" y="455" width="320" height="97"/>
+                                        <rect key="frame" x="960" y="457" width="320" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="Xl2-QZ-K1q">
-                                <rect key="frame" x="117" y="510" width="87" height="37"/>
+                                <rect key="frame" x="117" y="508" width="87" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.82554316520690918" green="0.82568562030792236" blue="0.8255341649055481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.12549019607843137" green="0.61176470588235299" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.11372549019607843" green="0.60392156862745094" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,6 +243,7 @@
                     <connections>
                         <outlet property="pageControl" destination="Xl2-QZ-K1q" id="LXV-X6-v3a"/>
                         <outlet property="scrollView" destination="76w-5P-PyL" id="MqE-Z6-meZ"/>
+                        <outlet property="takeCarouselForASpin" destination="Xza-KZ-PXc" id="RzF-iU-rw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsq-3L-Bll" userLabel="First Responder" sceneMemberID="firstResponder"/>

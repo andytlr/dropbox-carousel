@@ -14,13 +14,25 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var takeCarouselForASpin: UIImageView!
+    
     func updatePage() {
         let offset = scrollView.contentOffset.x / scrollView.frame.size.width
         let pageIndex = Int(offset)
         pageControl.currentPage = pageIndex
         
         if pageIndex == 3 {
-            pageControl.alpha = 0
+            self.pageControl.alpha = 0
+            
+            UIView.animateWithDuration(0.5, delay: 0.0, options: [], animations: {
+                self.takeCarouselForASpin.alpha = 1
+            }, completion: nil)
+            
+        } else {
+            UIView.animateWithDuration(0.1, delay: 0.0, options: [], animations: {
+                self.pageControl.alpha = 1
+                self.takeCarouselForASpin.alpha = 0
+            }, completion: nil)
         }
     }
     
