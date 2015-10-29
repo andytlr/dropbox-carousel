@@ -64,6 +64,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Max: 0)
         )
         
+        if imageOne.transform.ty > 0 || imageOne.transform.tx > 0  {
+            imageOne.transform.ty = 0
+            imageOne.transform.tx = 0
+        }
+        
         imageOne.transform = CGAffineTransformRotate(imageOne.transform, CGFloat(Double(
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
@@ -84,6 +89,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -260,    // Y Move
                 r2Max: 0)
         )
+        
+        if imageTwo.transform.ty > 0 || imageTwo.transform.tx < 0 {
+            imageTwo.transform.ty = 0
+            imageTwo.transform.tx = 0
+        }
         
         imageTwo.transform = CGAffineTransformScale(imageTwo.transform, scaleAmount, scaleAmount)
         
@@ -108,6 +118,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Max: 0)
         )
         
+        if imageThree.transform.ty > 0 || imageThree.transform.tx < 0 {
+            imageThree.transform.ty = 0
+            imageThree.transform.tx = 0
+        }
+        
         imageThree.transform = CGAffineTransformScale(imageThree.transform, scaleAmount, scaleAmount)
         
         imageThree.transform = CGAffineTransformRotate(imageThree.transform, CGFloat(Double(
@@ -130,6 +145,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -410,    // Y Move
                 r2Max: 0)
         )
+        
+        if imageFour.transform.ty > 0 || imageFour.transform.tx < 0 {
+            imageFour.transform.ty = 0
+            imageFour.transform.tx = 0
+        }
         
         imageFour.transform = CGAffineTransformScale(imageFour.transform, scaleAmount, scaleAmount)
         
@@ -154,6 +174,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Max: 0)
         )
         
+        if imageFive.transform.ty > 0 || imageFive.transform.tx > 0 {
+            imageFive.transform.ty = 0
+            imageFive.transform.tx = 0
+        }
+        
         imageFive.transform = CGAffineTransformScale(imageFive.transform, scaleAmount, scaleAmount)
         
         imageFive.transform = CGAffineTransformRotate(imageFive.transform, CGFloat(Double(
@@ -176,6 +201,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -530,    // Y Move
                 r2Max: 0)
         )
+        
+        if imageSix.transform.ty > 0 || imageSix.transform.tx > 0 {
+            imageSix.transform.ty = 0
+            imageSix.transform.tx = 0
+        }
         
         imageSix.transform = CGAffineTransformScale(imageSix.transform, scaleAmount, scaleAmount)
         
