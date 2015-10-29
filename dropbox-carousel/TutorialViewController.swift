@@ -16,6 +16,10 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var takeCarouselForASpin: UIImageView!
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     func updatePage() {
         let offset = scrollView.contentOffset.x / scrollView.frame.size.width
         let pageIndex = Int(offset)

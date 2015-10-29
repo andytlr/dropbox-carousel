@@ -16,6 +16,7 @@
 		C2C03AF11BE05456007B27DC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C03AF01BE05456007B27DC /* WelcomeViewController.swift */; };
 		C2C03AF31BE07A78007B27DC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C03AF21BE07A78007B27DC /* SignInViewController.swift */; };
 		C2D909841BE1B67100930AF0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D909831BE1B67100930AF0 /* TutorialViewController.swift */; };
+		C2D909861BE1CEFC00930AF0 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D909851BE1CEFC00930AF0 /* TimeLineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C2C03AF01BE05456007B27DC /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C2C03AF21BE07A78007B27DC /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C2D909831BE1B67100930AF0 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		C2D909851BE1CEFC00930AF0 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				C2C03AEE1BE0538B007B27DC /* Common.swift */,
 				C2C03AF01BE05456007B27DC /* WelcomeViewController.swift */,
 				C2C03AE01BE050F2007B27DC /* Main.storyboard */,
+				C2D909851BE1CEFC00930AF0 /* TimeLineViewController.swift */,
 				C2D909831BE1B67100930AF0 /* TutorialViewController.swift */,
 				C2C03AF21BE07A78007B27DC /* SignInViewController.swift */,
 				C2C03AE31BE050F2007B27DC /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			files = (
 				C2C03ADF1BE050F2007B27DC /* ViewController.swift in Sources */,
 				C2C03AF11BE05456007B27DC /* WelcomeViewController.swift in Sources */,
+				C2D909861BE1CEFC00930AF0 /* TimeLineViewController.swift in Sources */,
 				C2C03AEF1BE0538B007B27DC /* Common.swift in Sources */,
 				C2C03AF31BE07A78007B27DC /* SignInViewController.swift in Sources */,
 				C2D909841BE1B67100930AF0 /* TutorialViewController.swift in Sources */,
