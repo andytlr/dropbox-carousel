@@ -18,6 +18,10 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         let offset = scrollView.contentOffset.x / scrollView.frame.size.width
         let pageIndex = Int(offset)
         pageControl.currentPage = pageIndex
+        
+        if pageIndex == 3 {
+            pageControl.alpha = 0
+        }
     }
     
     override func viewDidLoad() {
