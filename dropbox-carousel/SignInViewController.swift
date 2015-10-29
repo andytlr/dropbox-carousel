@@ -57,7 +57,7 @@ class SignInViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(self.scrollView.contentOffset)
+//        print(self.scrollView.contentOffset)
         
         if scrollView.contentOffset.y <= 50.0 {
             view.endEditing(true)
