@@ -32,10 +32,10 @@ class SignInViewController: UIViewController, UIScrollViewDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
+        scrollView.delegate = self
+        
         hideTextBox.alpha = 0
         scrollView.bounces = false
-        
-        scrollView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +58,14 @@ class SignInViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         print(self.scrollView.contentOffset)
+        
+        if scrollView.contentOffset.y <= 50.0 {
+            view.endEditing(true)
+        }
+    }
+    
+    @IBAction func tapBackground(sender: AnyObject) {
+        view.endEditing(true)
     }
     
     @IBAction func FocusInput(sender: AnyObject) {
