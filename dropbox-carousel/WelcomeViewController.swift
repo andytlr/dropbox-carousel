@@ -21,17 +21,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         scrollView.contentSize = imageView.frame.size
-        
         scrollView.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -110,8 +102,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 ) * M_PI / 180))
         }
         
-        
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 }
