@@ -45,25 +45,25 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         
         let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: -20.0, r1Max: 568.0, r2Min: 2.0, r2Max: 1.0)
         
-        let imageOneXmin = CGFloat(-85)
-        let imageOneYmin = CGFloat(-280)
+        let imageOneXmin = -85
+        let imageOneYmin = -280
         
         imageOne.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: imageOneXmin,     // X Move
+                r2Min: CGFloat(imageOneXmin),     // X Move
                 r2Max: 0),
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: imageOneYmin,    // Y Move
+                r2Min: CGFloat(imageOneYmin),    // Y Move
                 r2Max: 0)
         )
 
-        if imageOne.transform.ty < imageOneYmin || imageOne.transform.tx < imageOneXmin  {
-            imageOne.transform.ty = imageOneYmin
-            imageOne.transform.tx = imageOneXmin
+        if imageOne.transform.ty < CGFloat(imageOneYmin) || imageOne.transform.tx < CGFloat(imageOneXmin)  {
+            imageOne.transform.ty = CGFloat(imageOneYmin)
+            imageOne.transform.tx = CGFloat(imageOneXmin)
         }
         
         if imageOne.transform.ty > 0 || imageOne.transform.tx > 0  {
