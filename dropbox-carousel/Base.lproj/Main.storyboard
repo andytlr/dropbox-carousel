@@ -56,7 +56,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <connections>
-                                            <action selector="tapSignInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xDC-48-sbu"/>
                                             <segue destination="r1U-65-sfd" kind="push" id="hcS-Ls-pqv"/>
                                         </connections>
                                     </button>
