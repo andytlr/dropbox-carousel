@@ -45,6 +45,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         
         let scrollMin = -20.0
         let scrollMax = 568.0
+        let scaleMax = 1
         
         // Won't need this forever
         let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: 2.0, r2Max: 1.0)
@@ -52,7 +53,6 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         let imageOneXmin = -85
         let imageOneYmin = -280
         let imageOneScaleMin = 1
-        let imageOneScaleMax = 1
         
         imageOne.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
@@ -112,8 +112,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         }
         
         imageOne.transform = CGAffineTransformScale(imageOne.transform,
-            convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(imageOneScaleMax)),
-            convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(imageOneScaleMax))
+            convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax)),
+            convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax))
         )
         
         imageOne.transform = CGAffineTransformRotate(imageOne.transform, CGFloat(Double(
@@ -123,6 +123,15 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -10,     // Rotation
                 r2Max: 0)
             ) * M_PI / 180))
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
