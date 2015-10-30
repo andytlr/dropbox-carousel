@@ -51,29 +51,29 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: 2.0, r2Max: 1.0)
         
         let images = [imageOne]
-        
-        let imageOneXmin = -85
-        let imageOneYmin = -280
-        let imageOneScaleMin = 1
+        let xMin = [-85]
+        let yMin = [-280]
+        let scaleMin = [1]
+        let rotation = [-10]
         
         for image in images {
             image.transform = CGAffineTransformMakeTranslation(
                 convertValue(scrollView.contentOffset.y,
                     r1Min: CGFloat(scrollMin),
                     r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(imageOneXmin),     // X Move
+                    r2Min: CGFloat(xMin[0]),     // X Move
                     r2Max: 0),
                 convertValue(scrollView.contentOffset.y,
                     r1Min: CGFloat(scrollMin),
                     r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(imageOneYmin),    // Y Move
+                    r2Min: CGFloat(yMin[0]),    // Y Move
                     r2Max: 0)
             )
             
-            if imageOneYmin < 0 {
-                if image.transform.ty < CGFloat(imageOneYmin)  {
-                    image.transform.ty = CGFloat(imageOneYmin)
-                    image.transform.tx = CGFloat(imageOneXmin)
+            if yMin[0] < 0 {
+                if image.transform.ty < CGFloat(yMin[0])  {
+                    image.transform.ty = CGFloat(yMin[0])
+                    image.transform.tx = CGFloat(xMin[0])
                 }
                 
                 if image.transform.ty > 0  {
@@ -81,9 +81,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                     image.transform.tx = 0
                 }
             } else {
-                if image.transform.ty > CGFloat(imageOneYmin)  {
-                    image.transform.ty = CGFloat(imageOneYmin)
-                    image.transform.tx = CGFloat(imageOneXmin)
+                if image.transform.ty > CGFloat(yMin[0])  {
+                    image.transform.ty = CGFloat(yMin[0])
+                    image.transform.tx = CGFloat(xMin[0])
                 }
                 
                 if image.transform.ty < 0  {
@@ -92,10 +92,10 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
             
-            if imageOneXmin < 0 {
-                if image.transform.tx < CGFloat(imageOneXmin) {
-                    image.transform.ty = CGFloat(imageOneYmin)
-                    image.transform.tx = CGFloat(imageOneXmin)
+            if xMin[0] < 0 {
+                if image.transform.tx < CGFloat(xMin[0]) {
+                    image.transform.ty = CGFloat(yMin[0])
+                    image.transform.tx = CGFloat(xMin[0])
                 }
                 
                 if image.transform.tx > 0 {
@@ -103,9 +103,9 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                     image.transform.tx = 0
                 }
             } else {
-                if image.transform.tx > CGFloat(imageOneXmin) {
-                    image.transform.ty = CGFloat(imageOneYmin)
-                    image.transform.tx = CGFloat(imageOneXmin)
+                if image.transform.tx > CGFloat(xMin[0]) {
+                    image.transform.ty = CGFloat(yMin[0])
+                    image.transform.tx = CGFloat(xMin[0])
                 }
                 
                 if image.transform.tx < 0 {
@@ -115,15 +115,15 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             }
             
             image.transform = CGAffineTransformScale(image.transform,
-                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax)),
-                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax))
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(scaleMin[0]), r2Max: CGFloat(scaleMax)),
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(scaleMin[0]), r2Max: CGFloat(scaleMax))
             )
             
             image.transform = CGAffineTransformRotate(image.transform, CGFloat(Double(
                 convertValue(scrollView.contentOffset.y,
-                    r1Min: -20.0,
-                    r1Max: 568.0,
-                    r2Min: -10,     // Rotation
+                    r1Min: CGFloat(scrollMin),
+                    r1Max: CGFloat(scrollMax),
+                    r2Min: CGFloat(rotation[0]),     // Rotation
                     r2Max: 0)
                 ) * M_PI / 180))
         } // end of for loop
