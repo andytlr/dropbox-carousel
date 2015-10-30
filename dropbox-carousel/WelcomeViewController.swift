@@ -70,28 +70,6 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                     r2Max: 0)
             )
             
-            if yMin[index] < 0 {
-                if image.transform.ty < CGFloat(yMin[index])  {
-                    image.transform.ty = CGFloat(yMin[index])
-                    image.transform.tx = CGFloat(xMin[index])
-                }
-                
-                if image.transform.ty > 0  {
-                    image.transform.ty = 0
-                    image.transform.tx = 0
-                }
-            } else {
-                if image.transform.ty > CGFloat(yMin[index])  {
-                    image.transform.ty = CGFloat(yMin[index])
-                    image.transform.tx = CGFloat(xMin[index])
-                }
-                
-                if image.transform.ty < 0  {
-                    image.transform.ty = 0
-                    image.transform.tx = 0
-                }
-            }
-            
             if xMin[index] < 0 {
                 if image.transform.tx < CGFloat(xMin[index]) {
                     image.transform.ty = CGFloat(yMin[index])
@@ -112,6 +90,17 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                     image.transform.ty = 0
                     image.transform.tx = 0
                 }
+            }
+            
+            // yMin stuff isn't in a if < 0 conditional because all the values are negative: they're always moving from the bottom to the top.
+            if image.transform.ty < CGFloat(yMin[index])  {
+                image.transform.ty = CGFloat(yMin[index])
+                image.transform.tx = CGFloat(xMin[index])
+            }
+            
+            if image.transform.ty > 0  {
+                image.transform.ty = 0
+                image.transform.tx = 0
             }
             
             image.transform = CGAffineTransformScale(image.transform,
