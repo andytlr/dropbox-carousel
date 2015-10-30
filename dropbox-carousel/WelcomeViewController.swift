@@ -56,25 +56,59 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         
         imageOne.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
+                r1Min: CGFloat(scrollMin),
+                r1Max: CGFloat(scrollMax),
                 r2Min: CGFloat(imageOneXmin),     // X Move
                 r2Max: 0),
             convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
+                r1Min: CGFloat(scrollMin),
+                r1Max: CGFloat(scrollMax),
                 r2Min: CGFloat(imageOneYmin),    // Y Move
                 r2Max: 0)
         )
-
-        if imageOne.transform.ty < CGFloat(imageOneYmin) || imageOne.transform.tx < CGFloat(imageOneXmin)  {
-            imageOne.transform.ty = CGFloat(imageOneYmin)
-            imageOne.transform.tx = CGFloat(imageOneXmin)
+        
+        if imageOneYmin < 0 {
+            if imageOne.transform.ty < CGFloat(imageOneYmin)  {
+                imageOne.transform.ty = CGFloat(imageOneYmin)
+                imageOne.transform.tx = CGFloat(imageOneXmin)
+            }
+            
+            if imageOne.transform.ty > 0  {
+                imageOne.transform.ty = 0
+                imageOne.transform.tx = 0
+            }
+        } else {
+            if imageOne.transform.ty > CGFloat(imageOneYmin)  {
+                imageOne.transform.ty = CGFloat(imageOneYmin)
+                imageOne.transform.tx = CGFloat(imageOneXmin)
+            }
+            
+            if imageOne.transform.ty < 0  {
+                imageOne.transform.ty = 0
+                imageOne.transform.tx = 0
+            }
         }
         
-        if imageOne.transform.ty > 0 || imageOne.transform.tx > 0  {
-            imageOne.transform.ty = 0
-            imageOne.transform.tx = 0
+        if imageOneXmin < 0 {
+            if imageOne.transform.tx < CGFloat(imageOneXmin) {
+                imageOne.transform.ty = CGFloat(imageOneYmin)
+                imageOne.transform.tx = CGFloat(imageOneXmin)
+            }
+            
+            if imageOne.transform.tx > 0 {
+                imageOne.transform.ty = 0
+                imageOne.transform.tx = 0
+            }
+        } else {
+            if imageOne.transform.tx > CGFloat(imageOneXmin) {
+                imageOne.transform.ty = CGFloat(imageOneYmin)
+                imageOne.transform.tx = CGFloat(imageOneXmin)
+            }
+            
+            if imageOne.transform.tx < 0 {
+                imageOne.transform.ty = 0
+                imageOne.transform.tx = 0
+            }
         }
         
         imageOne.transform = CGAffineTransformScale(imageOne.transform,
