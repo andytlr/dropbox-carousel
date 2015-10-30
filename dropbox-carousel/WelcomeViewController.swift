@@ -43,16 +43,17 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
-        let scrollMin   = -20.0
+        let scrollMin   = -35.0 // resting state is -20. But subtracting 15 means the images can move past their resting state, but still have a hard end or a clamped value.
         let scrollMax   = 568.0
         let scaleMax    = 1
         
         let images      = [imageOne,  imageTwo, imageThree, imageFour,  imageFive,  imageSix]
         let xMin        = [-85,       40,       10,         90,         -140,       -120]
-        let yMin        = [-280,      -260,     -460,       -410,       -540,       -530]
+        let yMin        = [-295,      -275,     -475,       -425,       -555,       -545]
         let scaleMin    = [1,         2,        2,          2,          2,          2]
         let rotation    = [-10,       -10,      10,         10,         10,         -10]
         
+        print(scrollView.contentOffset.y)
         
         for (index, image) in images.enumerate() {
             
