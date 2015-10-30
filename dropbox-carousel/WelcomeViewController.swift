@@ -41,16 +41,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         for (index, image) in images.enumerate() {
             
             image.transform = CGAffineTransformMakeTranslation(
-                convertValue(scrollView.contentOffset.y,
-                    r1Min: CGFloat(scrollMin),
-                    r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(xMin[index]),
-                    r2Max: 0),
-                convertValue(scrollView.contentOffset.y,
-                    r1Min: CGFloat(scrollMin),
-                    r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(yMin[index]),
-                    r2Max: 0)
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(xMin[index]), r2Max: 0),
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(yMin[index]), r2Max: 0)
             )
             
             if xMin[index] < 0 {
@@ -92,12 +84,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             )
             
             image.transform = CGAffineTransformRotate(image.transform, CGFloat(Double(
-                convertValue(scrollView.contentOffset.y,
-                    r1Min: CGFloat(scrollMin),
-                    r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(rotation[index]),
-                    r2Max: 0)
-                ) * M_PI / 180))
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(rotation[index]), r2Max: 0)
+            ) * M_PI / 180))
         }
         
     }
