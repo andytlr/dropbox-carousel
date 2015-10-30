@@ -43,18 +43,16 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
-        let scrollMin = -20.0
-        let scrollMax = 568.0
-        let scaleMax = 1
+        let scrollMin   = -20.0
+        let scrollMax   = 568.0
+        let scaleMax    = 1
         
-        // Won't need this forever
-        let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: 2.0, r2Max: 1.0)
+        let images      = [imageOne,  imageTwo, imageThree, imageFour,  imageFive,  imageSix]
+        let xMin        = [-85,       40,       10,         90,         -140,       -120]
+        let yMin        = [-280,      -260,     -460,       -410,       -540,       -530]
+        let scaleMin    = [1,         2,        2,          2,          2,          2]
+        let rotation    = [-10,       -10,      10,         10,         10,         -10]
         
-        let images = [imageOne]
-        let xMin = [-85]
-        let yMin = [-280]
-        let scaleMin = [1]
-        let rotation = [-10]
         
         for (index, image) in images.enumerate() {
             
@@ -62,12 +60,12 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 convertValue(scrollView.contentOffset.y,
                     r1Min: CGFloat(scrollMin),
                     r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(xMin[index]),     // X Move
+                    r2Min: CGFloat(xMin[index]),
                     r2Max: 0),
                 convertValue(scrollView.contentOffset.y,
                     r1Min: CGFloat(scrollMin),
                     r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(yMin[index]),    // Y Move
+                    r2Min: CGFloat(yMin[index]),
                     r2Max: 0)
             )
             
@@ -124,163 +122,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 convertValue(scrollView.contentOffset.y,
                     r1Min: CGFloat(scrollMin),
                     r1Max: CGFloat(scrollMax),
-                    r2Min: CGFloat(rotation[index]),     // Rotation
+                    r2Min: CGFloat(rotation[index]),
                     r2Max: 0)
                 ) * M_PI / 180))
-        } // end of for loop
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        imageTwo.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: 40,      // X Move
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -260,    // Y Move
-                r2Max: 0)
-        )
-        
-        if imageTwo.transform.ty > 0 || imageTwo.transform.tx < 0 {
-            imageTwo.transform.ty = 0
-            imageTwo.transform.tx = 0
         }
         
-        imageTwo.transform = CGAffineTransformScale(imageTwo.transform, scaleAmount, scaleAmount)
-        
-        imageTwo.transform = CGAffineTransformRotate(imageTwo.transform, CGFloat(Double(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -10,     // Rotation
-                r2Max: 0)
-                ) * M_PI / 180))
-        
-        
-        
-        imageThree.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: 10,      // X Move
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -460,    // Y Move
-                r2Max: 0)
-        )
-        
-        if imageThree.transform.ty > 0 || imageThree.transform.tx < 0 {
-            imageThree.transform.ty = 0
-            imageThree.transform.tx = 0
-        }
-        
-        imageThree.transform = CGAffineTransformScale(imageThree.transform, scaleAmount, scaleAmount)
-        
-        imageThree.transform = CGAffineTransformRotate(imageThree.transform, CGFloat(Double(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: 10,     // Rotation
-                r2Max: 0)
-            ) * M_PI / 180))
-        
-        imageFour.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: 90,      // X Move
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -410,    // Y Move
-                r2Max: 0)
-        )
-        
-        if imageFour.transform.ty > 0 || imageFour.transform.tx < 0 {
-            imageFour.transform.ty = 0
-            imageFour.transform.tx = 0
-        }
-        
-        imageFour.transform = CGAffineTransformScale(imageFour.transform, scaleAmount, scaleAmount)
-        
-        imageFour.transform = CGAffineTransformRotate(imageFour.transform, CGFloat(Double(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: 10,     // Rotation
-                r2Max: 0)
-            ) * M_PI / 180))
-        
-        imageFive.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -140,      // X Move
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -540,    // Y Move
-                r2Max: 0)
-        )
-        
-        if imageFive.transform.ty > 0 || imageFive.transform.tx > 0 {
-            imageFive.transform.ty = 0
-            imageFive.transform.tx = 0
-        }
-        
-        imageFive.transform = CGAffineTransformScale(imageFive.transform, scaleAmount, scaleAmount)
-        
-        imageFive.transform = CGAffineTransformRotate(imageFive.transform, CGFloat(Double(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: 10,     // Rotation
-                r2Max: 0)
-            ) * M_PI / 180))
-        
-        imageSix.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -120,      // X Move
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -530,    // Y Move
-                r2Max: 0)
-        )
-        
-        if imageSix.transform.ty > 0 || imageSix.transform.tx > 0 {
-            imageSix.transform.ty = 0
-            imageSix.transform.tx = 0
-        }
-        
-        imageSix.transform = CGAffineTransformScale(imageSix.transform, scaleAmount, scaleAmount)
-        
-        imageSix.transform = CGAffineTransformRotate(imageSix.transform, CGFloat(Double(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -10,     // Rotation
-                r2Max: 0)
-            ) * M_PI / 180))
         
     }
 
