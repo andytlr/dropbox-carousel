@@ -38,8 +38,6 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         let initialScale    = [1,         2,        2,          2,          2,          2]
         let rotation        = [-10,       -10,      10,         10,         10,         -10]
         
-        print(scrollView.contentOffset.y)
-        
         for (index, image) in images.enumerate() {
             
             image.transform = CGAffineTransformMakeTranslation(
