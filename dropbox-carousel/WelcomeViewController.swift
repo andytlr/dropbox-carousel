@@ -45,23 +45,33 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         
         let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: -20.0, r1Max: 568.0, r2Min: 2.0, r2Max: 1.0)
         
+        let imageOneXmin = CGFloat(-85)
+        let imageOneYmin = CGFloat(-280)
+        
         imageOne.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -85,     // X Move
+                r2Min: imageOneXmin,     // X Move
                 r2Max: 0),
             convertValue(scrollView.contentOffset.y,
                 r1Min: -20.0,
                 r1Max: 568.0,
-                r2Min: -280,    // Y Move
+                r2Min: imageOneYmin,    // Y Move
                 r2Max: 0)
         )
+
+        if imageOne.transform.ty < imageOneYmin || imageOne.transform.tx < imageOneXmin  {
+            imageOne.transform.ty = imageOneYmin
+            imageOne.transform.tx = imageOneXmin
+        }
         
         if imageOne.transform.ty > 0 || imageOne.transform.tx > 0  {
             imageOne.transform.ty = 0
             imageOne.transform.tx = 0
         }
+        
+        imageOne.transform = CGAffineTransformScale(imageOne.transform, 1, 1)
         
         imageOne.transform = CGAffineTransformRotate(imageOne.transform, CGFloat(Double(
             convertValue(scrollView.contentOffset.y,
@@ -70,6 +80,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -10,     // Rotation
                 r2Max: 0)
             ) * M_PI / 180))
+        
+        
         
         imageTwo.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
@@ -98,6 +110,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
                 r2Min: -10,     // Rotation
                 r2Max: 0)
                 ) * M_PI / 180))
+        
+        
         
         imageThree.transform = CGAffineTransformMakeTranslation(
             convertValue(scrollView.contentOffset.y,
