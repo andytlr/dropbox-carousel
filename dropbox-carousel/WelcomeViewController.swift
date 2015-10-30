@@ -11,19 +11,12 @@ import UIKit
 class WelcomeViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var imageOne: UIImageView!
-    
     @IBOutlet weak var imageTwo: UIImageView!
-    
     @IBOutlet weak var imageThree: UIImageView!
-    
     @IBOutlet weak var imageFour: UIImageView!
-    
     @IBOutlet weak var imageFive: UIImageView!
-    
     @IBOutlet weak var imageSix: UIImageView!
     
     override func viewDidLoad() {
@@ -43,15 +36,15 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
-        let scrollMin   = -35.0 // resting state is -20. But subtracting 15 means the images can move past their resting state, but still have a hard end or a clamped value.
-        let scrollMax   = 568.0
-        let scaleMax    = 1
+        let scrollMin       = -35.0 // resting state is -20. But subtracting 15 means the images can move past their resting state, but still have a hard end or a clamped value.
+        let scrollMax       = 568.0
+        let endScale        = 1
         
-        let images      = [imageOne,  imageTwo, imageThree, imageFour,  imageFive,  imageSix]
-        let xMin        = [-85,       40,       10,         90,         -140,       -120]
-        let yMin        = [-295,      -275,     -475,       -425,       -555,       -545]
-        let scaleMin    = [1,         2,        2,          2,          2,          2]
-        let rotation    = [-10,       -10,      10,         10,         10,         -10]
+        let images          = [imageOne,  imageTwo, imageThree, imageFour,  imageFive,  imageSix]
+        let xMin            = [-85,       40,       10,         90,         -140,       -120]
+        let yMin            = [-295,      -275,     -475,       -425,       -555,       -545]
+        let initialScale    = [1,         2,        2,          2,          2,          2]
+        let rotation        = [-10,       -10,      10,         10,         10,         -10]
         
         print(scrollView.contentOffset.y)
         
@@ -104,8 +97,8 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
             }
             
             image.transform = CGAffineTransformScale(image.transform,
-                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(scaleMin[index]), r2Max: CGFloat(scaleMax)),
-                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(scaleMin[index]), r2Max: CGFloat(scaleMax))
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(initialScale[index]), r2Max: CGFloat(endScale)),
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(initialScale[index]), r2Max: CGFloat(endScale))
             )
             
             image.transform = CGAffineTransformRotate(image.transform, CGFloat(Double(
