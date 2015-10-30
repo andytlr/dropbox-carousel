@@ -50,79 +50,83 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         // Won't need this forever
         let scaleAmount = convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: 2.0, r2Max: 1.0)
         
+        let images = [imageOne]
+        
         let imageOneXmin = -85
         let imageOneYmin = -280
         let imageOneScaleMin = 1
         
-        imageOne.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: CGFloat(scrollMin),
-                r1Max: CGFloat(scrollMax),
-                r2Min: CGFloat(imageOneXmin),     // X Move
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: CGFloat(scrollMin),
-                r1Max: CGFloat(scrollMax),
-                r2Min: CGFloat(imageOneYmin),    // Y Move
-                r2Max: 0)
-        )
-        
-        if imageOneYmin < 0 {
-            if imageOne.transform.ty < CGFloat(imageOneYmin)  {
-                imageOne.transform.ty = CGFloat(imageOneYmin)
-                imageOne.transform.tx = CGFloat(imageOneXmin)
+        for image in images {
+            image.transform = CGAffineTransformMakeTranslation(
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: CGFloat(scrollMin),
+                    r1Max: CGFloat(scrollMax),
+                    r2Min: CGFloat(imageOneXmin),     // X Move
+                    r2Max: 0),
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: CGFloat(scrollMin),
+                    r1Max: CGFloat(scrollMax),
+                    r2Min: CGFloat(imageOneYmin),    // Y Move
+                    r2Max: 0)
+            )
+            
+            if imageOneYmin < 0 {
+                if image.transform.ty < CGFloat(imageOneYmin)  {
+                    image.transform.ty = CGFloat(imageOneYmin)
+                    image.transform.tx = CGFloat(imageOneXmin)
+                }
+                
+                if image.transform.ty > 0  {
+                    image.transform.ty = 0
+                    image.transform.tx = 0
+                }
+            } else {
+                if image.transform.ty > CGFloat(imageOneYmin)  {
+                    image.transform.ty = CGFloat(imageOneYmin)
+                    image.transform.tx = CGFloat(imageOneXmin)
+                }
+                
+                if image.transform.ty < 0  {
+                    image.transform.ty = 0
+                    image.transform.tx = 0
+                }
             }
             
-            if imageOne.transform.ty > 0  {
-                imageOne.transform.ty = 0
-                imageOne.transform.tx = 0
-            }
-        } else {
-            if imageOne.transform.ty > CGFloat(imageOneYmin)  {
-                imageOne.transform.ty = CGFloat(imageOneYmin)
-                imageOne.transform.tx = CGFloat(imageOneXmin)
-            }
-            
-            if imageOne.transform.ty < 0  {
-                imageOne.transform.ty = 0
-                imageOne.transform.tx = 0
-            }
-        }
-        
-        if imageOneXmin < 0 {
-            if imageOne.transform.tx < CGFloat(imageOneXmin) {
-                imageOne.transform.ty = CGFloat(imageOneYmin)
-                imageOne.transform.tx = CGFloat(imageOneXmin)
-            }
-            
-            if imageOne.transform.tx > 0 {
-                imageOne.transform.ty = 0
-                imageOne.transform.tx = 0
-            }
-        } else {
-            if imageOne.transform.tx > CGFloat(imageOneXmin) {
-                imageOne.transform.ty = CGFloat(imageOneYmin)
-                imageOne.transform.tx = CGFloat(imageOneXmin)
+            if imageOneXmin < 0 {
+                if image.transform.tx < CGFloat(imageOneXmin) {
+                    image.transform.ty = CGFloat(imageOneYmin)
+                    image.transform.tx = CGFloat(imageOneXmin)
+                }
+                
+                if image.transform.tx > 0 {
+                    image.transform.ty = 0
+                    image.transform.tx = 0
+                }
+            } else {
+                if image.transform.tx > CGFloat(imageOneXmin) {
+                    image.transform.ty = CGFloat(imageOneYmin)
+                    image.transform.tx = CGFloat(imageOneXmin)
+                }
+                
+                if image.transform.tx < 0 {
+                    image.transform.ty = 0
+                    image.transform.tx = 0
+                }
             }
             
-            if imageOne.transform.tx < 0 {
-                imageOne.transform.ty = 0
-                imageOne.transform.tx = 0
-            }
-        }
-        
-        imageOne.transform = CGAffineTransformScale(imageOne.transform,
-            convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax)),
-            convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax))
-        )
-        
-        imageOne.transform = CGAffineTransformRotate(imageOne.transform, CGFloat(Double(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: -20.0,
-                r1Max: 568.0,
-                r2Min: -10,     // Rotation
-                r2Max: 0)
-            ) * M_PI / 180))
+            image.transform = CGAffineTransformScale(image.transform,
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax)),
+                convertValue(scrollView.contentOffset.y, r1Min: CGFloat(scrollMin), r1Max: CGFloat(scrollMax), r2Min: CGFloat(imageOneScaleMin), r2Max: CGFloat(scaleMax))
+            )
+            
+            image.transform = CGAffineTransformRotate(image.transform, CGFloat(Double(
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: -20.0,
+                    r1Max: 568.0,
+                    r2Min: -10,     // Rotation
+                    r2Max: 0)
+                ) * M_PI / 180))
+        } // end of for loop
         
         
         
