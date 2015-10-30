@@ -2,7 +2,7 @@
 
 Bit more complicated than last week.
 
-`Time spent: 8 hours`
+`Time spent: 10 hours`
 
 ## Requirements
 
@@ -11,7 +11,9 @@ Bit more complicated than last week.
 ![Welcome](welcome.gif)
 
 - [x] Transform the illustrations on scroll
-- [x] Clamp the translate min values so when you scroll down the illustrations don't fly everywhere. They still have some rotation and scale so it isn't a hard end.
+- [x] Clamp the translate end y values so when you scroll down the illustrations don't fly everywhere. They still have some rotation and scale so it isn't a hard end.
+- [x] Clamp the y start values. But adjust the scroll minimum in the range converter to be less than the actual minimum scroll value so the illustrations can bounce past 0 but not just keep flying all over the place.
+- [x] Spent forever getting this to be decently designed code instead of 100s of lines of copy paste.
 
 ### Sign in
 
